@@ -1,0 +1,52 @@
+{
+  "name": "voiceover",
+  "version": "0.0.1",
+  "description": "macOS VoiceOver Typescript interface and CLI",
+  "main": "index.js",
+  "files": [
+    "./bin/*.js",
+    "./dist/cli.js",
+    "./dist/index.js",
+    "./dist/Commands.js",
+    "./dist/Commands.ts",
+    "./dist/VoiceOver.js",
+    "./dist/VoiceOver.ts",
+    "./dist/*.d.ts"
+  ],
+  "bin": {
+    "voiceover": "bin/voiceover.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "yarn build && mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckundo/VoiceOver.js.git"
+  },
+  "keywords": [
+    "voiceover",
+    "screenreader",
+    "accessibility"
+  ],
+  "author": "Cameron Cundiff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ckundo/VoiceOver.js/issues"
+  },
+  "homepage": "https://github.com/ckundo/VoiceOver.js#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^8.2.3",
+    "@types/node": "^16.3.3",
+    "chai": "^4.3.4",
+    "mocha": "^9.0.2",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@jxa/global-type": "^1.3.4",
+    "@jxa/run": "^1.3.4",
+    "@jxa/types": "^1.3.4"
+  }
+}
