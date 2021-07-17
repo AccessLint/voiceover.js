@@ -4,14 +4,14 @@
   "description": "macOS VoiceOver Typescript interface and CLI",
   "main": "index.js",
   "files": [
-    "./bin/*.js",
-    "./dist/cli.js",
-    "./dist/index.js",
-    "./dist/Commands.js",
-    "./dist/Commands.ts",
-    "./dist/VoiceOver.js",
-    "./dist/VoiceOver.ts",
-    "./dist/*.d.ts"
+    "bin/*.js",
+    "dist/cli.js",
+    "dist/index.js",
+    "dist/Commands.js",
+    "dist/Commands.ts",
+    "dist/VoiceOver.js",
+    "dist/VoiceOver.ts",
+    "dist/*.d.ts"
   ],
   "bin": {
     "voiceover": "bin/voiceover.js"
