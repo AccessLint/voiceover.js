@@ -13,7 +13,7 @@ Use it to launch VoiceOver and log output to the command line, or write your own
 
 ### Launch VoiceOver with output logs
 
-  $ npx voiceover
+    $ npx voiceover
 
 ### Stop VoiceOver
 
@@ -27,10 +27,10 @@ Use it to launch VoiceOver and log output to the command line, or write your own
 
 ### Launching a URL with VoiceOver running
 
-  $ open https://www.example.com -a Safari && npx voiceover
-  => Welcome to macOS. VoiceOver is on.
-  => Example Domain - Google Chrome Page has 1 link 1 heading 8 articles
+    $ open https://www.example.com -a Safari && npx voiceover
+    #=> Welcome to macOS. VoiceOver is on.
+    #=> Example Domain - Google Chrome Page has 1 link 1 heading 8 articles
 
 ### Saving VoiceOver output to a text file
 
-  $ open https://www.twitter.com -a Safari && npx voiceover | grep heading > headings.txt
+    $ open https://www.twitter.com -a Safari && npx voiceover | grep heading > headings.txt
