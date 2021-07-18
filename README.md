@@ -23,13 +23,13 @@ Use it to launch VoiceOver and log output to the command line, or write your own
 
 - If the program exits without quitting VoiceOver, press Command-F5 or close the VoiceOver caption panel using the X button.
 
-## Example
+## Examples
 
 ### Launching a URL with VoiceOver running
 
   $ open https://www.example.com -a Safari && npx voiceover
-  # => Welcome to macOS. VoiceOver is on.
-  # => Example Domain - Google Chrome Page has 1 link 1 heading 8 articles
+  => Welcome to macOS. VoiceOver is on.
+  => Example Domain - Google Chrome Page has 1 link 1 heading 8 articles
 
 ### Saving VoiceOver output to a text file
 
