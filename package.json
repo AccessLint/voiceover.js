@@ -36,6 +36,7 @@
     "@types/chai": "^4.2.21",
     "@types/mocha": "^8.2.3",
     "@types/node": "^16.3.3",
+    "appium": "^1.22.2",
     "chai": "^4.3.4",
     "mocha": "^9.0.2",
     "ts-node": "^10.1.0",

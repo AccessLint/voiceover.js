@@ -23,7 +23,7 @@ jobs:
           command: yarn install --frozen-lockfile
       - run:
           name: Start Appium
-          command: yarn appium
+          command: yarn appium &
       - run:
           name: VoiceOver Test
           command: yarn ts-node examples/ios/index.ts
