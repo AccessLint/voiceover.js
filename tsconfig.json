@@ -7,11 +7,12 @@
     ],
     "module": "commonjs",
     "moduleResolution": "node",
-    "outDir": "./dist",
-    "target": "es5"
+    "rootDir": "./src",
+    "outDir": "./lib",
+    "target": "esnext"
   },
   "exclude": [
-    "dist",
+    "lib",
     "node_modules",
     "spec"
   ]
