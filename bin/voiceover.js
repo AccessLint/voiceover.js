@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { VoiceOver } = require('../dist/VoiceOver.js');
+const { VoiceOver } = require('../lib/VoiceOver.js');
 
 const voiceOver = new VoiceOver();
 

@@ -2,17 +2,14 @@
   "name": "voiceover",
   "version": "0.0.2",
   "description": "macOS VoiceOver Typescript interface and CLI",
-  "main": "index.js",
+  "main": "lib/index.js",
   "files": [
     "bin/*.js",
-    "dist/cli.js",
-    "dist/index.js",
-    "dist/Commands.js",
-    "dist/Commands.ts",
-    "dist/VoiceOver.js",
-    "dist/VoiceOver.ts",
-    "dist/*.d.ts"
+    "lib/Commands.d.ts",
+    "lib/VoiceOver.d.ts",
+    "lib/index.js"
   ],
+  "types": "lib/index.d.ts",
   "bin": {
     "voiceover": "bin/voiceover.js"
   },
@@ -22,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ckundo/VoiceOver.js.git"
+    "url": "git+https://github.com/AccessLint/VoiceOver.js.git"
   },
   "keywords": [
     "voiceover",
@@ -32,9 +29,9 @@
   "author": "Cameron Cundiff",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ckundo/VoiceOver.js/issues"
+    "url": "https://github.com/AccessLint/VoiceOver.js/issues"
   },
-  "homepage": "https://github.com/ckundo/VoiceOver.js#readme",
+  "homepage": "https://github.com/AccessLint/VoiceOver.js#readme",
   "devDependencies": {
     "@types/chai": "^4.2.21",
     "@types/mocha": "^8.2.3",
