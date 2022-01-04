@@ -8,29 +8,33 @@ async function main () {
     port: 4723,
     capabilities: {
       platformName: "iOS",
-      platformVersion: "15.0",
+      platformVersion: "14.5",
       deviceName: "iPhone Simulator",
       app: "com.apple.Health",
       automationName: "XCUITest",
     },
   };
 
-  const client = await wdio.remote(opts);
+  try {
+    const client = await wdio.remote(opts);
 
-  const voiceover = new VoiceOver();
-  await voiceover.launch();
-  voiceover.tail();
+    const voiceover = new VoiceOver();
+    await voiceover.launch();
+    voiceover.tail();
 
-  let i = 0;
-  const limit = 25;
-  while (i < limit) {
-    await voiceover.execute(moveRight);
-    i++;
+    let i = 0;
+    const limit = 25;
+    while (i < limit) {
+      await voiceover.execute(moveRight);
+      i++;
+    }
+
+    await voiceover.quit();
+
+    await client.deleteSession();
+  } catch (error) {
+    console.log(error);
   }
-
-  await voiceover.quit();
-
-  await client.deleteSession();
 }
 
 main();

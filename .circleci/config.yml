@@ -19,11 +19,10 @@ jobs:
           name: Set AppleScript Enabled Default
           command: defaults write com.apple.VoiceOver4/default SCREnableAppleScript -bool true
       - run:
-          name: Install Dependencies
-          command: yarn install --frozen-lockfile
+          command: yarn
       - run:
-          name: Start Appium
-          command: yarn appium &
+          command: yarn appium
+          background: true
       - run:
           name: VoiceOver Test
           command: yarn ts-node examples/ios/index.ts
