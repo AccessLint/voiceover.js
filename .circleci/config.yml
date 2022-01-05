@@ -13,14 +13,16 @@ jobs:
       - macos/add-uitest-permissions
       - macos/add-safari-permissions
       - run:
-          name: Add VoiceOver AppleScript DB Entry
+          name: Add VoiceOver AppleScript DB entry
           command: sudo bash -c 'echo -n "a" > /private/var/db/Accessibility/.VoiceOverAppleScriptEnabled'
       - run:
-          name: Set AppleScript Enabled Default
+          name: Set AppleScript enabled default
           command: defaults write com.apple.VoiceOver4/default SCREnableAppleScript -bool true
       - run:
+          name: Install dependencies
           command: yarn
       - run:
+          name: Start Appium / iOS Simulator
           command: yarn appium
           background: true
       - run:

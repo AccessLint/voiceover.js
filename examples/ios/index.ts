@@ -1,39 +1,47 @@
 import * as wdio from "webdriverio";
-import { moveRight, rotor } from "../../lib/Commands";
+import { moveRight } from "../../lib/Commands";
 import { VoiceOver } from '../../lib/VoiceOver'
 
 async function main () {
-  const opts = {
+  const opts: wdio.RemoteOptions = {
     path: "/wd/hub",
     port: 4723,
+    connectionRetryTimeout: 600000,
     capabilities: {
       platformName: "iOS",
       platformVersion: "14.5",
-      deviceName: "iPhone Simulator",
+      deviceName: "iPhone X",
       app: "com.apple.Health",
       automationName: "XCUITest",
     },
   };
 
+  const client = await wdio.remote(opts);
+
   try {
-    const client = await wdio.remote(opts);
-
     const voiceover = new VoiceOver();
+
+    console.log('launching voiceover...');
     await voiceover.launch();
-    voiceover.tail();
+    await(new Promise<void>(resolve => { setTimeout(() => resolve(), 60000) }));
+    console.log(await voiceover.lastPhrase());
+    // voiceover.tail();
 
-    let i = 0;
-    const limit = 25;
-    while (i < limit) {
-      await voiceover.execute(moveRight);
-      i++;
-    }
 
+    // let i = 0;
+    // const limit = 10;
+    // while (i < limit) {
+    //   await voiceover.execute(moveRight);
+    //   console.log(await voiceover.lastPhrase());
+    //   i++;
+    // }
+
+    console.log('quitting voiceover.');
     await voiceover.quit();
-
-    await client.deleteSession();
   } catch (error) {
     console.log(error);
+  } finally {
+    await client.deleteSession();
   }
 }
 
