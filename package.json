@@ -5,9 +5,7 @@
   "main": "lib/index.js",
   "files": [
     "bin/*.js",
-    "lib/Commands.d.ts",
-    "lib/VoiceOver.d.ts",
-    "lib/index.js"
+    "lib/*.js"
   ],
   "types": "lib/index.d.ts",
   "bin": {
