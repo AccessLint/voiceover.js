@@ -24,3 +24,9 @@ export const startInteracting: Command = {
   keyCode: 125,
   modifiers: ['control down', 'option down', 'shift down']
 };
+
+export const activate: Command = {
+  name: "Activate a control",
+  keyCode: 49,
+  modifiers: ['control down', 'option down']
+};

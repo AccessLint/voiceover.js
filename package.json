@@ -13,7 +13,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "yarn build && mocha"
+    "test": "playwright test"
   },
   "repository": {
     "type": "git",
@@ -31,11 +31,13 @@
   },
   "homepage": "https://github.com/AccessLint/VoiceOver.js#readme",
   "devDependencies": {
+    "@playwright/test": "^1.20.1",
     "@types/chai": "^4.2.21",
     "@types/mocha": "^8.2.3",
     "@types/node": "^16.3.3",
     "chai": "^4.3.4",
     "mocha": "^9.0.2",
+    "playwright-webkit": "^1.20.1",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5"
   },

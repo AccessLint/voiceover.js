@@ -1,0 +1,145 @@
+{
+  "cookies": [
+    {
+      "name": "guest_id_marketing",
+      "value": "v1%3A164807300741645347",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1711145007,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "guest_id_ads",
+      "value": "v1%3A164807300741645347",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1711145007,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "personalization_id",
+      "value": "\"v1_HIlx9q+ZmMQimBO4iDkvTQ==\"",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1711145007,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "guest_id",
+      "value": "v1%3A164807300741645347",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1711145007,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ct0",
+      "value": "218d297c636254ab499cc8d75f0d4e3b7040906f255d9a525a4871e3f54c4c224ce55fe84a3953a73459cef78f73a8c9210cd56b4698d5262acca0f20329f4fa6396d7139a7e5652c1084ccae168e7d3",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1805753033,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "gt",
+      "value": "1506753519872843777",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1648083807,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.2.365917054.1648073008",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1711145008,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "None"
+    },
+    {
+      "name": "_gid",
+      "value": "GA1.2.1076321226.1648073008",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1648159408,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "None"
+    },
+    {
+      "name": "_twitter_sess",
+      "value": "BAh7CSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%250ASGFzaHsABjoKQHVzZWR7ADoPY3JlYXRlZF9hdGwrCEBqzrh%252FAToMY3NyZl9p%250AZCIlZWRhMWI2ZTk1ODA0MGQzM2U5MjE1YTcyMzRjYzU1N2I6B2lkIiVkNzE4%250AMDJiMTk0ZWNlMDk1Zjk3MDJiYzYyY2M2ZmY2Yg%253D%253D--c350bec7313aa28eb957efb0b245ef48d0f3c764",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "kdt",
+      "value": "6Um65pAXBuqcvuCdguZrmA9yKrHeEZU8kwljqnrf",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1695333833,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "twid",
+      "value": "u%3D14789862",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1679609033,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "auth_token",
+      "value": "e7abaf9ffa347e981b0dad9133890c511e931b61",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1805753033,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "att",
+      "value": "1-2FJmbGFiAqOmbtWYU0LiWsO1AVj7eooYtLV48M6R",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1648159433,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://twitter.com",
+      "localStorage": [
+        {
+          "name": "branch_session_first",
+          "value": "{\"session_id\":\"1035300111934552682\",\"identity_id\":\"1035300111935564841\",\"link\":\"https://twitter.app.link?%24identity_id=1035300111935564841\",\"data\":\"{\\\"+clicked_branch_link\\\":false,\\\"+is_first_session\\\":true}\",\"browser_fingerprint_id\":\"MTAzNTMwMDExMTkyNTc5NzE3Mg==\",\"has_app\":false,\"identity\":null}"
+        }
+      ]
+    }
+  ]
+}
