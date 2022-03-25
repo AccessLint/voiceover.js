@@ -16,6 +16,8 @@ Use it to launch VoiceOver and log output to the command line, or write your own
     $ npx voiceover
 
 - Press Control-C to stop.
+- If the program exits without quitting VoiceOver, press Command-F5 or close the VoiceOver caption panel using the X button.
+- You can also use Siri "hey Siri, turn off VoiceOver".
 
 ### NodeJS
 
@@ -52,10 +54,6 @@ or by landmark:
 ```javascript
 await voiceOver.rotor({ menu: 'Landmarks', find: 'search' }); // navigate directly to a heading using the web rotor
 ```
-
-### Troubleshooting
-
-- If the program exits without quitting VoiceOver, press Command-F5 or close the VoiceOver caption panel using the X button.
 
 ## Examples
 
