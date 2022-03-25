@@ -3,16 +3,17 @@
   "version": "0.2.0",
   "description": "macOS VoiceOver Typescript interface and CLI",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "files": [
     "bin/*.js",
     "lib/*.js"
   ],
-  "types": "lib/index.d.ts",
   "bin": {
     "voiceover": "bin/voiceover.js"
   },
   "scripts": {
     "build": "tsc",
+    "prepublish": "yarn build",
     "test": "playwright test"
   },
   "repository": {

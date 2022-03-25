@@ -21,7 +21,7 @@ export declare class VoiceOver {
     lastPhrase(): Promise<string>;
     execute(command: Command): Promise<string>;
     cancel(): Promise<string>;
-    rotor({ menu, find, }: {
+    rotor({ menu, find, }?: {
         menu?: string;
         find?: string;
     }): Promise<void>;
