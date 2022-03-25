@@ -11,13 +11,47 @@ Use it to launch VoiceOver and log output to the command line, or write your own
 
 ## Usage
 
-### Launch VoiceOver with output logs
+### CLI
 
     $ npx voiceover
 
-### Stop VoiceOver
+- Press Control-C to stop.
 
-- Press Control-C
+### NodeJS
+
+```javascript
+import { VoiceOver } from 'voiceover';
+
+const voiceOver = new VoiceOver();
+await voiceOver.launch(); // start VoiceOver screen reader
+voiceOver.tail(); // print last phrase on navigation
+// perform actions using seek, rotor, and execute
+await voiceOver.quit(); // stop VoiceOver
+```
+
+#### Examples
+
+##### Advance cursor to text
+
+You can navigate to a specific phrase:
+
+```javascript
+await voiceOver.seek({ text: 'Example' }); // move cursor right to the next occurance of this phrase
+```
+
+##### Rotor Navigation
+
+In a realistic user scenario, someone could navigate the page by headings:
+
+```javascript
+await voiceOver.rotor({ menu: 'Headings', find: 'my heading' }); // navigate directly to a heading using the web rotor
+```
+
+or by landmark:
+
+```javascript
+await voiceOver.rotor({ menu: 'Landmarks', find: 'search' }); // navigate directly to a heading using the web rotor
+```
 
 ### Troubleshooting
 
