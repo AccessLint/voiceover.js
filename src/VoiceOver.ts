@@ -93,31 +93,33 @@ export class VoiceOver {
     text: string;
     role?: string;
     tries?: number;
-  }): Promise<boolean> {
+  }): Promise<string[]> {
     let match = false;
     let count = 0;
+    let phrases = [];
     const textRegex = new RegExp(text, "i");
 
     while (count < tries && !match) {
       await this.execute(moveRight);
       const phrase = await this.lastPhrase();
+      phrases.push(phrase);
 
       if (role) {
         if (phrase.endsWith(` ${role}`)) {
           if (phrase.match(textRegex)) {
-            return true;
+            break;
           }
         }
       } else {
         if (phrase.match(textRegex)) {
-          return true;
+          break;
         }
       }
 
       count++;
     }
 
-    return false;
+    return phrases;
   }
 
   public lastPhrase(): Promise<string> {

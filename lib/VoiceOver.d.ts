@@ -17,7 +17,7 @@ export declare class VoiceOver {
         text: string;
         role?: string;
         tries?: number;
-    }): Promise<boolean>;
+    }): Promise<string[]>;
     lastPhrase(): Promise<string>;
     execute(command: Command): Promise<string>;
     cancel(): Promise<string>;
