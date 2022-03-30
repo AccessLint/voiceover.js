@@ -13,6 +13,13 @@ export declare class VoiceOver {
         role?: "button" | "link";
         tries?: number;
     }): Promise<void>;
+    advance({ target, steps, }: {
+        target?: {
+            text: string;
+            role: string;
+        };
+        steps?: number;
+    }): Promise<string>;
     seek({ text, role, tries, }: {
         text: string;
         role?: string;

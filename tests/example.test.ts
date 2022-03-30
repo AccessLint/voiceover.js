@@ -16,8 +16,11 @@ test.describe('twitter.com', () => {
 
       await voiceOver.rotor({ menu: "Window Spots", find: "conten" });
       await voiceOver.execute(startInteracting);
-      const output = await voiceOver.seek({ text: 'link More information...' });
-      expect(output).toContain('link More information...');
+      const output = await voiceOver.advance({
+        target: { text: "More information...", role: "link" },
+        steps: 5,
+      });
+      expect(output).toEqual("link More information...");
     } catch (error) {
       console.warn(error);
     } finally {

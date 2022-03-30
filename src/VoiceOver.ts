@@ -85,6 +85,39 @@ export class VoiceOver {
     }
   }
 
+  public async advance({
+    target,
+    steps = 1,
+  }: {
+    target?: {
+      text: string;
+      role: string;
+    };
+    steps?: number;
+  }): Promise<string> {
+    const { text, role } = target;
+    const phrases = [];
+    let match = false;
+    let count = 0;
+    const textRegex = new RegExp(text, "i");
+
+    while (count < steps && !match) {
+      await this.execute(moveRight);
+      const phrase = await this.lastPhrase();
+      phrases.push(phrase);
+
+      if (phrase.match(textRegex)) {
+        if (!role || phrase.startsWith(role) || phrase.endsWith(role)) {
+          match = true;
+        }
+      }
+
+      count++;
+    }
+
+    return phrases[phrases.length - 1];
+  }
+
   public async seek({
     text,
     role,
