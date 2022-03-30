@@ -6,7 +6,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn workspace voiceover build",
-    "test": "yarn workspace voiceover test"
+    "build": "yarn workspace @accesslint/voiceover build",
+    "test": "yarn workspace @accesslint/voiceover test"
   }
 }
