@@ -1,10 +1,10 @@
 import { test, webkit, expect } from '@playwright/test';
-import { activate, startInteracting, VoiceOver } from '../lib';
+import { startInteracting, VoiceOver } from '../lib';
 
-test.describe('twitter.com', () => {
-  test.setTimeout(60000);
+test.describe('example.com', () => {
+  test.setTimeout(30000);
 
-  test("headings test", async () => {
+  test("link test", async () => {
     const voiceOver = new VoiceOver();
     await voiceOver.launch();
     const browser = await webkit.launch({ headless: false });

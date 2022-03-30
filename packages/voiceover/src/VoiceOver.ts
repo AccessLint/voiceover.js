@@ -1,13 +1,13 @@
-import { run as jxaRun } from '@jxa/run';
-import { exec as execWithCallback } from 'child_process';
+import { run as jxaRun } from "@jxa/run";
+import { exec as execWithCallback } from "child_process";
 import "@jxa/global-type";
-import * as util from 'util';
+import * as util from "util";
 const exec = util.promisify(execWithCallback);
 
-import { activate, Command, moveRight, rotor } from './Commands.js';
+import { activate, Command, moveRight, rotor } from "./Commands.js";
 
 enum Messages {
-  'stopped' = 'Session ended'
+  "stopped" = "Session ended",
 }
 
 export class VoiceOver {

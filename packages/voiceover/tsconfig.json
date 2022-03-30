@@ -12,8 +12,8 @@
     "target": "esnext"
   },
   "exclude": [
-    "lib",
     "node_modules",
-    "tests"
+    "tests",
+    "lib",
   ]
 }
