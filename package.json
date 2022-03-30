@@ -1,6 +1,6 @@
 {
   "name": "voiceover",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "macOS VoiceOver Typescript interface and CLI",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
