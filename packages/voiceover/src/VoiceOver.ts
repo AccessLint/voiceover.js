@@ -102,7 +102,6 @@ export class VoiceOver {
     const textRegex = new RegExp(text, "i");
 
     while (count < steps && !match) {
-      await this.execute(moveRight);
       const phrase = await this.lastPhrase();
       phrases.push(phrase);
 
@@ -112,7 +111,10 @@ export class VoiceOver {
         }
       }
 
-      count++;
+      if (!match) {
+        await this.execute(moveRight);
+        count++;
+      }
     }
 
     return phrases[phrases.length - 1];

@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "build": "yarn workspace @accesslint/voiceover build",
-    "test": "yarn workspace @accesslint/voiceover test"
+    "test": "yarn workspace @accesslint/voiceover test",
+    "test:browser": "yarn workspace @accesslint/browser-tests test"
   }
 }
