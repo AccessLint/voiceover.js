@@ -1,4 +1,7 @@
-node_modules/
 *.log
 lib/
+node_modules/
+playwright-report/
 storageState.json
+test-results/
+test-videos/
