@@ -28,7 +28,7 @@ const config: PlaywrightTestConfig = {
   /* Opt out of parallel tests on CI. */
   workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: 'list',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     headless: false,
@@ -38,7 +38,7 @@ const config: PlaywrightTestConfig = {
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    // trace: 'on-first-retry',
   },
 
   /* Configure projects for major browsers */
@@ -64,7 +64,7 @@ const config: PlaywrightTestConfig = {
       },
     },
 
-    // /* Test against mobile viewports. */
+    /* Test against mobile viewports. */
     {
       name: 'Mobile Chrome',
       use: {
@@ -78,7 +78,7 @@ const config: PlaywrightTestConfig = {
       },
     },
 
-    // /* Test against branded browsers. */
+    /* Test against branded browsers. */
     {
       name: 'Microsoft Edge',
       use: {

@@ -15,5 +15,6 @@
     "node_modules",
     "tests",
     "lib",
+    "playwright.config.ts"
   ]
 }

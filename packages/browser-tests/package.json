@@ -10,7 +10,6 @@
   "author": "Cameron Cundiff",
   "license": "MIT",
   "devDependencies": {
-    "@accesslint/voiceover": "^0.4.3",
     "@playwright/test": "^1.20.1"
   }
 }

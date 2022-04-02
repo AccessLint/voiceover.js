@@ -1,8 +1,10 @@
 import { run as jxaRun } from "@jxa/run";
-import { exec as execWithCallback } from "child_process";
+import { exec as execWithCallback, spawn as spawnWithCallback } from "child_process";
 import "@jxa/global-type";
 import * as util from "util";
+
 const exec = util.promisify(execWithCallback);
+const spawn = util.promisify(spawnWithCallback);
 
 import { activate, Command, moveRight, rotor } from "./Commands.js";
 
@@ -14,12 +16,46 @@ export class VoiceOver {
   current?: string = null;
 
   private _previous?: string = null;
-  private _started?: boolean = false;
   private _timer?: NodeJS.Timer;
+  private _log? = false;
+  private _started?: boolean;
+
+  constructor(
+    { log }: { log?: boolean } = {
+      log: false,
+    }
+  ) {
+    this._log = log;
+    this._started = false;
+  }
+
+  public record({ file }: { file: string }) {
+    spawn("screencapture", ["-v", "-C", "-k", "-T0", "-g", file], {
+      detached: true,
+    });
+  }
 
   public async launch(): Promise<void> {
     if (this._started) {
       return;
+    }
+
+    if (this._log) {
+      this._timer = setInterval(async () => {
+        try {
+          this.current = await this.lastPhrase();
+          if (!this.current || this.current.trim() === this._previous) {
+            return;
+          }
+          console.log(this.current);
+          this._previous = this.current.trim();
+        } catch (error) {
+          if (error.message.match(/Application isn't running|Command failed/)) {
+            return;
+          }
+          console.error(error);
+        }
+      }, 100);
     }
 
     try {
@@ -51,24 +87,6 @@ export class VoiceOver {
     }
   }
 
-  public tail(): void {
-    this._timer = setInterval(async () => {
-      try {
-        this.current = await this.lastPhrase();
-        if (!this.current || this.current.trim() === this._previous) {
-          return;
-        }
-        console.log(this.current);
-        this._previous = this.current.trim();
-      } catch (error) {
-        if (error.message.match(/Application isn't running|Command failed/)) {
-          return;
-        }
-        console.error(error);
-      }
-    }, 100);
-  }
-
   public async clickNext({
     text,
     role,
@@ -91,33 +109,38 @@ export class VoiceOver {
   }: {
     target?: {
       text: string;
-      role: string;
+      role?: string;
     };
     steps?: number;
   }): Promise<string> {
     const { text, role } = target;
-    const phrases = [];
-    let match = false;
+    let phrases = [];
+    let matches = false;
     let count = 0;
+
     const textRegex = new RegExp(text, "i");
 
-    while (count < steps && !match) {
+    while (count < steps && !matches) {
       const phrase = await this.lastPhrase();
       phrases.push(phrase);
 
-      if (phrase.match(textRegex)) {
-        if (!role || phrase.startsWith(role) || phrase.endsWith(role)) {
-          match = true;
+      if (phrase && phrase.match(textRegex)) {
+        if (!role) {
+          matches = true;
+        } else if (phrase.startsWith(role) || phrase.endsWith(role)) {
+          matches = true;
         }
       }
 
-      if (!match) {
+      if (!matches) {
         await this.execute(moveRight);
         count++;
+      } else {
+        return phrases[phrases.length - 1];
       }
     }
 
-    return phrases[phrases.length - 1];
+    throw new Error(`phrase "${text}" not found in ${phrases}`);
   }
 
   public async seek({
