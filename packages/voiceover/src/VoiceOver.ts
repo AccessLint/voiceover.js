@@ -19,13 +19,16 @@ export class VoiceOver {
   private _timer?: NodeJS.Timer;
   private _log? = false;
   private _started?: boolean;
+  private _stepDelayMs?: number;
 
   constructor(
-    { log }: { log?: boolean } = {
+    { log, stepDelayMs }: { log?: boolean; stepDelayMs?: number } = {
       log: false,
+      stepDelayMs: 200,
     }
   ) {
     this._log = log;
+    this._stepDelayMs = stepDelayMs;
     this._started = false;
   }
 
@@ -189,10 +192,11 @@ export class VoiceOver {
   }
 
   public execute(command: Command): Promise<string> {
-    return jxaRun(({ keyCode, modifiers }) => {
+    return jxaRun(({ keyCode, modifiers }, stepDelayMs = 10) => {
       const systemEvents = Application("System Events");
+      delay(stepDelayMs/1000);
       systemEvents.keyCode(keyCode, { using: modifiers });
-    }, command);
+    }, command, this._stepDelayMs);
   }
 
   public cancel(): Promise<string> {

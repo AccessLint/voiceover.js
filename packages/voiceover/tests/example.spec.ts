@@ -4,7 +4,7 @@ import { startInteracting, VoiceOver } from "../lib";
 let voiceOver: VoiceOver;
 
 test.beforeAll(async () => {
-  voiceOver = new VoiceOver({ log: true });
+  voiceOver = new VoiceOver({ log: true, stepDelayMs: 2000 });
 });
 
 test.beforeEach(async ({ page }) => {
