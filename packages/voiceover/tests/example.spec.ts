@@ -1,14 +1,15 @@
 import { test, expect } from '@playwright/test';
 import { startInteracting, VoiceOver } from "../lib";
+import * as path from "path";
 
 let voiceOver: VoiceOver;
 
 test.beforeAll(async () => {
-  voiceOver = new VoiceOver({ log: true, stepDelayMs: 2000 });
+  voiceOver = new VoiceOver({ log: true, stepDelayMs: 200 });
 });
 
 test.beforeEach(async ({ page }) => {
-  voiceOver.record({ file: 'test-videos/recording.mov' });
+  voiceOver.record({ file: path.resolve(__dirname, '../../../tmp/test-videos/recording.mov') });
   await page.waitForTimeout(3000);
   await voiceOver.launch();
   await page.waitForTimeout(3000);

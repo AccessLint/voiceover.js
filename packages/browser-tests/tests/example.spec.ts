@@ -26,7 +26,7 @@ test.afterEach(async () => {
 })
 
 test.describe('New Todo', () => {
-  test("should allow me to add todo items", async ({ page }) => {
+  test("should allow me to add todo items", async () => {
     await voiceOver.advance({
       target: { text: "what needs to be done" },
       steps: 5
