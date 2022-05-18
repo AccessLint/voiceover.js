@@ -3,13 +3,15 @@ import { startInteracting, VoiceOver } from "../lib";
 import * as path from "path";
 
 let voiceOver: VoiceOver;
+const timestamp = new Date().toISOString();
+const recordingPath = path.resolve(__dirname, `../../../tmp/test-videos/${timestamp}.mov`);
 
 test.beforeAll(async () => {
   voiceOver = new VoiceOver({ log: true, stepDelayMs: 200 });
 });
 
 test.beforeEach(async ({ page }) => {
-  voiceOver.record({ file: path.resolve(__dirname, '../../../tmp/test-videos/recording.mov') });
+  voiceOver.record({ file: recordingPath });
   await page.waitForTimeout(3000);
   await voiceOver.launch();
   await page.waitForTimeout(3000);
@@ -20,6 +22,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.afterEach(async () => {
+  console.log(`Recording saved to ${recordingPath}`);
   await voiceOver.quit();
 });
 
