@@ -6,7 +6,7 @@ import * as util from "util";
 const exec = util.promisify(execWithCallback);
 const spawn = util.promisify(spawnWithCallback);
 
-import { activate, Command, moveRight, rotor } from "./Commands.js";
+import { activate, Command, moveRight, rotor } from "./Commands";
 
 enum Messages {
   "stopped" = "Session ended",

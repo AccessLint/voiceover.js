@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { startInteracting, VoiceOver } from "../lib";
+import { startInteracting, VoiceOver } from "../src";
 import * as path from "path";
 
 let voiceOver: VoiceOver;
