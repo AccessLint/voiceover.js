@@ -1,3 +1,5 @@
+## Moved to https://github.com/AccessLint/screenreaders
+
 # VoiceOver.js
 
 A CLI and TypeScript interface for VoiceOver screen reader  on macOS. 
